@@ -1,0 +1,80 @@
+:root{
+--primary-color:#D4AF37;
+--secondary-color:#A6892E;
+--Tertiary-color:#9780FF;
+--Neutral-color:#121212;
+ --main-font: "Lato", sans-serif;
+}
+
+body{
+    background-color: var(--Neutral-color);
+    font-family: var(--main-font);
+}
+
+h1 {
+  font-size: 2.5rem;   
+  font-weight: 700;
+}
+
+h2 {
+  font-size: 2rem;     
+  font-weight: 700;
+}
+
+h3 {
+  font-size: 1.75rem;  
+  font-weight: 600;
+}
+
+h4 {
+  font-size: 1.5rem;   
+  font-weight: 600;
+}
+
+h5 {
+  font-size: 1.25rem;  
+  font-weight: 500;
+}
+
+h6 {
+  font-size: 1rem;     
+  font-weight: 500;
+}
+
+p {
+  font-size: 1rem;     
+  font-weight: 300;
+  line-height: 1.6;
+}
+
+
+button{
+    background-color: var(--primary-color);
+    color: var(--Neutral-color);
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+input{
+    background-color: var(--primary-color);
+    color: var(--Neutral-color);
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover{
+    background-color: var(--secondary-color);
+}
+
+input:focus{
+    background-color: var(--secondary-color);
+}
+
+
+
+
+
