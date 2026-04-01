@@ -71,7 +71,7 @@ button:hover{
 }
 
 input:focus{
-    background-color: var(--secondary-color);
+    background-color:#353534;
 }
 
 
