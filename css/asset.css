@@ -76,7 +76,95 @@ input:focus{
     background-color:#353534;
 }
 
+.header{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.logo p{
+   color: var(--primary-color);
+   font-size: 40px;
+   font-weight: bolder;
+   letter-spacing: 5px;
+}
+.navlink nav a{
+    color: #D0C5AF;
+    text-decoration: none;
+    font-size: 20px;
+    margin: 0px 10px;
+}
+.currency{
+    background-color: #353534;
+    padding:8px ;
+    height: 40px;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.currency button{
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    justify-content: center;
+    background-color: #35353400;
+    color: wheat;
+    font-weight: bold;
+    padding: 0px 15px;
+}
+.currency .selected{
+    background-color: var(--primary-color);
+    color: black;
+    font-weight: bold;
+    padding: 0px 15px;
+}   
+.loginbutton{
+    background-color: #35353400;
+    color: white;
+}
+
+.footer{
+    width: 100%;
+    margin-top: 40px;
+    padding: 20px 0;
+    background-color: #0d0d0d;
+}
+
+.footer-content{
+    width: 90%;
+    margin: auto;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+
+    color: #777;
+}
+
+.links a{
+    margin: 0 10px;
+    color: #777;
+    font-size: 14px;
+    text-decoration: none;
+}
+
+.links a:hover{
+    color: #F2CA50;
+}
+
+.logo-yousef{
+    color: var(--primary-color);
+    font-size: 40px;
+    font-weight: bolder;
+    letter-spacing: 5px;
+}
 
 
+
+h3:hover,h6:hover , a:hover{
+    color: var(--primary-color);
+    cursor: pointer;
+}
 
 
