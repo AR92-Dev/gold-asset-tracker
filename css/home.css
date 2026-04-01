@@ -177,3 +177,47 @@
     color: black;
 }
 .chartdraw{width: 100%;}
+
+.footer{
+    width: 100%;
+    margin-top: 40px;
+    padding: 20px 0;
+    background-color: #0d0d0d;
+}
+
+.footer-content{
+    width: 90%;
+    margin: auto;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+
+    color: #777;
+}
+
+.links a{
+    margin: 0 10px;
+    color: #777;
+    font-size: 14px;
+    text-decoration: none;
+}
+
+.links a:hover{
+    color: #F2CA50;
+}
+
+.logo-yousef{
+    color: var(--primary-color);
+    font-size: 40px;
+    font-weight: bolder;
+    letter-spacing: 5px;
+}
+
+
+
+h3:hover,h6:hover , a:hover{
+    color: var(--primary-color);
+    cursor: pointer;
+}
