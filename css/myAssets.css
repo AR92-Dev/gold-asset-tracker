@@ -146,16 +146,19 @@ h6 {
     margin-left: 2rem;
     margin-top: 0;
     display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
     gap: 2vw;
 
 }
 
 .first_card {
+    flex: 0 0 calc(33.33% - 1.3vw);
     box-shadow: 0 0 10px #D4AF37;
      display: flex;
     flex-direction: column;
     margin-top: 2vw;
-    flex: 1;
+    
     min-width: 100px;
     max-width: 350px;
     height: auto;
@@ -241,3 +244,14 @@ hr {
     color: #E5E2E1;
     box-shadow: 0 0 2px #D4AF37;
 }
+
+.form-control:disabled {
+    background-color: #575755;
+    color: #E5E2E1;
+    /* box-shadow: 0 0 2px #D4AF37; */
+}
+
+
+
+
+

@@ -1,25 +1,80 @@
 
-const xValues = [50,60,70,80,90,100,110,120,130,140,150];
-const yValues = [7,8,8,9,9,9,10,11,14,14,15];
+ let peroid ="day"
+ const day = document.getElementById("day")
+  const month = document.getElementById("month")
+   const year = document.getElementById("year")
+const ctx = document.getElementById('myChart');
 
-new Chart("myChart", {
+const myChart =new Chart(ctx, {
   type: "line",
   data: {
-    labels: xValues,
+    labels: [],
     datasets: [{
-      fill: false,
-      lineTension: 0.4,
-      backgroundColor: "#D4AF37",
+      fill: true,
+      tension: 0.4, 
+      backgroundColor: "#d4af3722",
       borderColor: "#D4AF37",
-      data: yValues,
+      data: [],
       pointRadius: 0,
       pointHoverRadius: 0,
     }]
   },
   options: {
-    legend: {display: false},
+    plugins: { 
+      legend: { 
+        display: false
+      }
+    },
     scales: {
-      yAxes: [{ticks: {min: 6, max:16}}],
+      y: {                       
+       
+      }
     }
   }
 });
+
+function getdata(peroid){
+  const chartdata = JSON.parse(localStorage.getItem("dates")) 
+  let xValue=[];
+ if(peroid==="day") {
+ xValue=chartdata.map(item => {
+      return `${item.hours.toString().padStart(2, '0')}:${item.minuts.toString().padStart(2, '0')}`;
+  });
+ }
+ else if(peroid==="month"){
+  xValue = chartdata.map(item => `${item.month}/${item.day}`);
+ }
+ else if(peroid==="year"){
+  xValue=chartdata.map(item => {
+      return `${item.year}`;})
+ }
+  
+  
+  const yValues = chartdata.map(value=>value.price)
+  myChart.data.labels=xValue;
+  myChart.data.datasets[0].data=yValues
+  myChart.update();
+}
+day.addEventListener("click",()=>{
+    peroid="day"
+    day.className="selected"
+    month.classList.remove('selected');
+    year.classList.remove('selected');
+    getdata(peroid)
+   })
+   month.addEventListener("click",()=>{
+    peroid="month"
+    month.className="selected"
+    day.classList.remove('selected');
+    year.classList.remove('selected');
+    getdata(peroid)
+   })
+   year.addEventListener("click",()=>{
+    peroid="year"
+    year.className="selected"
+    day.classList.remove('selected');
+    month.classList.remove('selected');
+    getdata(peroid)
+   })
+getdata(peroid)
+setInterval(() => {getdata(peroid);}, 100)
