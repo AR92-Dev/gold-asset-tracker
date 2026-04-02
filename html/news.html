@@ -3,49 +3,52 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/news.css">
     <link rel="stylesheet" href="../css/asset.css">
+    <link rel="stylesheet" href="../css/news.css">
     <title>News — KIRATY</title>
 </head>
 <body>
 
- <div class="maindev">
-        <div class="header">
-            <div class="logo"><p>KIRATY</p></div>
-            <div class="navlink">
-                <nav>
-  <a href="home_page.html">Home</a> |
-  <a href="gold_prices_page.html">Prices</a> |
-  <a href="my_assests.html">My Assets</a> |
-  <a href="news.html">News</a>
-</nav>
-            </div>
-            <div class="currency">
-                <button class="selected">USD</button>
-                <button>JOD</button>
-            </div>
-            <div class="login">
-                <button class="loginbutton">Login</button>
-                <button>CREATE ACCOUNT</button>
-            </div>
+<div class="maindev">
+    <div class="header">
+        <div class="logo"><p>KIRATY</p></div>
+        <div class="navlink">
+            <nav>
+                <a href="home_page.html">Home</a> |
+                <a href="gold_prices_page.html">Prices</a> |
+                <a href="my_assests.html">My Assets</a> |
+                <a href="news.html">News</a>
+            </nav>
         </div>
-        <!----->
-        <!----->
-        <!----->
-        <div class="newsHeader">
-            <h3>Latest Intelligence</h3>
-            <div class="SecandreyBar">
+        <div class="currency">
+            <button class="selected">USD</button>
+            <button>JOD</button>
+        </div>
+        <div class="login">
+            <button class="loginbutton" onclick="window.location.href='login.html'">Login</button>
+            <button onclick="window.location.href='register.html'">CREATE ACCOUNT</button>
+        </div>
+    </div>
+
+    <!----->
+
+    <div class="newsHeader">
+        <h3>Latest Intelligence</h3>
+        <div class="SecandreyBar">
             <h6 class="selected">LATEST</h6>
             <h6>TRENDING</h6>
-            </div>
         </div>
+    </div>
 
-        <hr>
+    <hr class="gold-divider">
 
-        
+    <!-- -->
+    <div id="news-container" class="carrd-container">
+        <p class="loading-text">Loading latest gold news...</p>
+    </div>
 
+</div>
 
-
-    
+<script src="../js/news.js"></script>
 </body>
 </html>

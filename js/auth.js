@@ -14,8 +14,8 @@ if (loginForm) {
         const user = users.find(u => u.email === email && u.password === password); //get user if exists
 
         if (user) {
-            sessionStorage.setItem("isLoggedIn", "true");
-            sessionStorage.setItem("currentUser", email);
+            localStorage.setItem("isLoggedIn", "true");
+            localStorage.setItem("currentUser", email);
             window.location.href = "my_assests.html";
         } else {
             alert("Invalid email or password");
