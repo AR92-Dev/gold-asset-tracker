@@ -159,6 +159,7 @@
     background-color: #1C1B1B;
     color: white;
     width: 100%;
+    margin: 10px;
 }
 .intervalchart{
     background-color:#353534;
@@ -176,7 +177,15 @@
     background-color: var(--primary-color);
     color: black;
 }
-.chartdraw{width: 100%;}
+.chartdraw{
+    margin: 10px;
+    padding: 100px;
+    
+}
+.mychart{
+    max-width: 100%;
+    padding: 100px;
+}
 
 .footer{
     width: 100%;
@@ -220,4 +229,53 @@
 h3:hover,h6:hover , a:hover{
     color: var(--primary-color);
     cursor: pointer;
+}
+.gold_prices_div{
+    display: flex;
+    gap: 50px;
+    margin: 50px;
+    justify-content: center;
+    align-items: center;
+    
+}
+.gold-price-card{
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    background-color: #2A2A2A;
+    width: 400px;
+    height: 300px;
+    color: white;
+    padding: 30px;
+}
+.gold-price-card img{
+width: 130px;
+}
+.gold-price-card p{
+    font-size: 20px;
+}
+.upper-gold-price{
+    display: flex;
+    gap: 40px;
+    justify-content: start;
+    align-items: center;
+
+}
+.lowe-gold-price{
+    display: flex;
+    justify-content: start;
+    align-items: end;
+}
+.lowe-gold-price h4{
+ font-size: 50px;
+ font-weight: bolder;
+}
+.goldpricesection ,.my-assets-section{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 50px;
+}
+.goldpricesection h2 ,.my-assets-section h2{
+    color: var(--primary-color);
 }
