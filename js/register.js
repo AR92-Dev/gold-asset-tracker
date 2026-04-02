@@ -20,7 +20,7 @@ if (registerForm) {
             alert("Please fill in all fields");
             return;
         }
-
+        
         if(password.length < 5){
             alert("Password must be at least 5 characters long");
             return;
