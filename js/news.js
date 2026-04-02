@@ -3,7 +3,7 @@ const url = `https://gnews.io/api/v4/search?q=XAU&max=15&apikey=f0a144935ebb94dc
 async function fetchNews() {
     try {
         const res = await fetch(url);
-        const data = await res.json(); //frome obj to json 
+        const data = await res.json(); //frome json to obj
         console.log(data);
         if (data.articles && data.articles.length > 0) {
             displayNewsCards(data.articles);
