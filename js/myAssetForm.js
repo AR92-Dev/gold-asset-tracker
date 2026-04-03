@@ -246,27 +246,27 @@ function getDefaultImage() {
 
     // Jewelry
     if (input3_assetType.value === "Jewelry") {
-        if (input4_typeJewlery.value === "ring") return "/gold-asset-tracker/images/Rings.png";
-        if (input4_typeJewlery.value === "bracelet") return "/gold-asset-tracker/images/Bracelet.png";
-        if (input4_typeJewlery.value === "necklace") return "/gold-asset-tracker/images/Necklace.png";
-        if (input4_typeJewlery.value === "earrings") return "/gold-asset-tracker/images/Earring.png";
-        return "images/heroGold.jpeg";
+        if (input4_typeJewlery.value === "ring") return "/images/Rings.png";
+        if (input4_typeJewlery.value === "bracelet") return "/images/Bracelet.png";
+        if (input4_typeJewlery.value === "necklace") return "/images/Necklace.png";
+        if (input4_typeJewlery.value === "earrings") return "/images/Earring.png";
+        return "/images/heroGold.jpeg";
     }
 
     // Coins
     if (input3_assetType.value === "Coins") {
-        if (input5_typeCoins.value === "eCoin") return "/gold-asset-tracker/images/English.png";
-        if (input5_typeCoins.value === "rCoin") return "/gold-asset-tracker/images/Rashadi_Gold.png";
-        return "images/heroGold.jpeg";
+        if (input5_typeCoins.value === "eCoin") return "/images/English.png";
+        if (input5_typeCoins.value === "rCoin") return "images/Rashadi_Gold.png";
+        return "/images/heroGold.jpeg";
     }
 
     // Bars
     if (input3_assetType.value === "Gold_bars") {
-        if (input6_typeBars.value === "one_bullion") return "/gold-asset-tracker/images/Fine_Gold_1Kilo.png";
-        if (input6_typeBars.value === "one_ounce") return "/gold-asset-tracker/images/Fine_Gold_10Kilo.png";
-        if (input6_typeBars.value === "half_ounce") return "/gold-asset-tracker/images/F Fine_Gold_5Kilo.png";
-        return "images/heroGold.jpeg";
+        if (input6_typeBars.value === "one_bullion") return "/images/Fine_Gold_1Kilo.png";
+        if (input6_typeBars.value === "one_ounce") return "/images/Fine_Gold_10Kilo.png";
+        if (input6_typeBars.value === "half_ounce") return "/images/F Fine_Gold_5Kilo.png";
+        return "/images/heroGold.jpeg";
     }
 
-    return "images/heroGold.jpeg";
+    return "/images/heroGold.jpeg";
 }
