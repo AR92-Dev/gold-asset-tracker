@@ -1,3 +1,4 @@
+
 fetch('../html/Template/header.html')
     .then(response => {
         if (!response.ok) throw new Error("Header not found!");
@@ -25,3 +26,15 @@ fetch('../html/Template/footer.html')
             login.style.visibility=false
 
         }
+function show_side(){
+    const side=  document.getElementById("side")
+   side.style.display="flex"
+   document.getElementById("menu").style.display="none"
+}
+function close_side(){
+    const side=  document.getElementById("side")
+   side.style.display="none"
+   document.getElementById("menu").style.display="block"
+}
+
+  
