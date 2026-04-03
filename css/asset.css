@@ -129,6 +129,7 @@ input:focus{
     margin-top: 40px;
     padding: 20px 0;
     background-color: #0d0d0d;
+    align-self: self-end;
 }
 
 .footer-content{

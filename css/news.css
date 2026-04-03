@@ -1,4 +1,10 @@
-
+body{
+    display: flex;
+    flex-direction: column;
+}
+footer{
+    justify-self: end;
+}
 .newsHeader {
     display: flex;
     justify-content: space-between;
