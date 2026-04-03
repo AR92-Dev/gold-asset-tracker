@@ -204,6 +204,25 @@ addAssetForm.addEventListener("submit", (e) => {
     } else {
         clearError(input9_purchaseDate);
     }
+     if (!saveToform) return;
+    if (input10_assetImage.files.length > 0) {
+        let file = input10_assetImage.files[0]; //  first image
+        let reader = new FileReader(); //  obj  to read files
+
+        reader.onload = function(e) { //  func  to read image
+            imagePath = e.target.result; //  image as base64
+            saveAsset(); //  save asset
+        };
+
+        reader.readAsDataURL(file); //  func to convert image to base64
+
+    } else {
+        imagePath = getDefaultImage(); 
+        saveAsset();
+    } 
+
+    /*
+      Dana
     if (input10_assetImage.files.length > 0) {
         imagePath = URL.createObjectURL(input10_assetImage.files[0]);
 
@@ -229,6 +248,7 @@ addAssetForm.addEventListener("submit", (e) => {
 
         addAssetsCards();
     }
+    */
 })
 
 function showError(input, message) {
@@ -270,3 +290,23 @@ function getDefaultImage() {
 
     return "images/heroGold.jpeg";
 }
+
+
+//yosuef save func 
+ function saveAsset() {
+        let asset = {
+            name: input1_assetName.value, 
+            kirat: input2_kirat.value,
+            type: input3_assetType.value,
+            weight: Number(input7_weight.value), // convert to number
+            price: Number(input8_purchasePrice.value), // convert to number
+            date: input9_purchaseDate.value,
+            image: imagePath
+        };
+
+        let assets = JSON.parse(localStorage.getItem("assets")) || []; // json -> obj
+        assets.push(asset);
+        localStorage.setItem("assets", JSON.stringify(assets)); // obj -> strign
+
+        addAssetsCards(); // update UI
+    }

@@ -5,6 +5,14 @@ fetch('./html/Template/header.html')
     })
     .then(data => {
         document.getElementById('header-placeholder').innerHTML = data;
+        const showDiv = document.getElementById("show");
+        if (showDiv) {
+            if (localStorage.getItem("isLoggedIn") === "true") {
+                showDiv.style.display = "none"; 
+            } else {
+                showDiv.style.display = "flex"; 
+            }
+        }
     })
     .catch(error => console.error(error));
 
@@ -17,11 +25,12 @@ fetch('./html/Template/footer.html')
         document.getElementById('footer-placeholder').innerHTML = data;
     })
     .catch(error => console.error(error));
-    const login = document.getElementById("login")
-    if(sessionStorage.getItem("isLoggedIn") !== "true"){
-            login.style.visibility=false
-        }
-        else{
-            login.style.visibility=false
 
-        }
+    // const login = document.getElementById("login")
+    // if(sessionStorage.getItem("isLoggedIn") !== "true"){
+    //         login.style.visibility=false
+    //     }
+    //     else{
+    //         login.style.visibility=false
+
+    //     }

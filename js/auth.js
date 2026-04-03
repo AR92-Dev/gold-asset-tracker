@@ -69,7 +69,7 @@ if (loginForm) {
             localStorage.setItem("isLoggedIn", "true");
             localStorage.setItem("currentUser", email); //حفظ المستخدم الحالي
             showToast("Welcome back! Redirecting...", "success");
-            setTimeout(() => { window.location.href = "myAssets.html"; }, 1500);
+            setTimeout(() => { window.location.href = "news.html"; }, 1500);
         } else {
             showToast("Invalid email or password.");
         }
