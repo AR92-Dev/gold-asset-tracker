@@ -188,7 +188,7 @@ h3:hover {
 @media (max-width: 768px) {
     .newsHeader { padding: 20px 16px 10px; flex-direction: column; align-items: flex-start; }
     .carrd-container { padding: 10px 16px 40px; }
-    .header { flex-direction: column; gap: 16px; }
+    
     .gold-divider { margin: 0 16px 20px; }
 }
 
