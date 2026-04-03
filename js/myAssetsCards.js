@@ -1,4 +1,6 @@
-
+// localStorage.removeItem("assets");
+// console.log("main is:", typeof main);
+// main ();
 function addAssetsCards() {
     
 let assetsContainer = document.getElementById("assetsContainer");
@@ -59,15 +61,27 @@ let assetsContainer = document.getElementById("assetsContainer");
 
 
 function calculateCurrentValue(asset) {
-    // Here you can put your own logic, e.g., current price per gram
-    let currentPricePerGram = 50; // Example
-    return (asset.weight * currentPricePerGram).toFixed(2);
+    let result;
+    if (asset.kirat==="24k")
+    {
+        console.log("in 24k value of gram is "+ dollar_24k_1gram)
+        result= asset.weight * dollar_24k_1gram;
+    }
+    else if(asset.kirat==="21k")
+        {result=asset.weight * dollar_21k_1gram;}
+    else
+    {
+      result=asset.weight * dollar_18k_1gram;  
+    }
+
+    return result;
+
 }
 
 function calculateProfit(asset) {
     let current = calculateCurrentValue(asset);
     let profit = current - asset.price;
-    return (profit >= 0 ? "+" : "") + "$" + profit.toFixed(2);
+    return (profit >= 0 ? "+ " : "")  + profit.toFixed(2) + " $";
 }
 
 function calculatePercentage(asset) {
@@ -78,4 +92,14 @@ function calculatePercentage(asset) {
 }
 
 
-addAssetsCards();
+document.addEventListener("DOMContentLoaded", async () => {
+    await main();        // get prices
+    addAssetsCards();    // render cards
+});
+
+// update every 10 sec
+setInterval(async () => {
+    await main();
+    addAssetsCards();
+}, 10000);
+
