@@ -18,10 +18,10 @@ let assetsContainer = document.getElementById("assetsContainer");
     
     assetsContainer.innerHTML = "";
 
-    
+    let currentUser = localStorage.getItem("currentUser");
     let assets = JSON.parse(localStorage.getItem("assets")) || [];
-
-   assets.forEach((asset, index) => {
+let userAssets = assets.filter(asset => asset.user === currentUser);
+   userAssets.forEach((asset, index) => {
 
      let searchValue = searchInput.value.toLowerCase();
     let selectedType = typeSelect.value;
@@ -156,9 +156,18 @@ function updateAsset2(){
 function deleteAsset(index) {
 
     if (!confirm("Are you sure you want to delete this asset?")) return;
+    let currentUser = localStorage.getItem("currentUser");
     let assets = JSON.parse(localStorage.getItem("assets")) || [];
-    assets.splice(index, 1);
+
+    let userAssets = assets.filter(asset => asset.user === currentUser);
+
+    let assetToDelete = userAssets[index];
+
+    
+    assets = assets.filter(asset => asset !== assetToDelete);
+
     localStorage.setItem("assets", JSON.stringify(assets));
+
     addAssetsCards();
     updateAsset2();
 }

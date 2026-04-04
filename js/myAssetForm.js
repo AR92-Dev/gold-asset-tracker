@@ -214,6 +214,7 @@ addAssetForm.addEventListener("submit", (e) => {
     }
 
     if (saveToform) {
+        let currentUser = localStorage.getItem("currentUser");
         let asset = {
             name: input1_assetName.value,
             kirat: input2_kirat.value,
@@ -221,7 +222,8 @@ addAssetForm.addEventListener("submit", (e) => {
             weight: Number(input7_weight.value),
             price: Number(input8_purchasePrice.value),
             date: input9_purchaseDate.value,
-            image: imagePath
+            image: imagePath,
+            user: currentUser 
         };
         let assets = JSON.parse(localStorage.getItem("assets")) || [];
         assets.push(asset);
