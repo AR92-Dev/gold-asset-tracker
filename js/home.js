@@ -2,6 +2,7 @@ const firstline = document.getElementById("line_1")
 const secondline = document.getElementById("line_2")
 const thirdline = document.getElementById("line_3")
 const slider = document.getElementById("newsslider")
+const vab= document.getElementById("botton_assets")
 let dates = [];
 let currency = "dollar";
 if (localStorage.getItem("dates") === null) {
@@ -85,9 +86,11 @@ let assetsContainer = document.getElementById("assetsContainer");
 
     let index=0;
      if(localStorage.getItem("isLoggedIn") !== "true"){
-            assetsContainer.innerHTML = `<div>Please Login to view or add assets</div>`;
+            assetsContainer.innerHTML = `<div class="no_assests">Please Login to view or add assets</div>`;
+            vab.style.display="none";
         }
         else{
+            vab.style.display="block";
             let assets = JSON.parse(localStorage.getItem("assets")) || [];
         for (const asset of assets){
             if(index>=3){
