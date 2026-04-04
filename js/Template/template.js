@@ -12,16 +12,27 @@ function fetchdata() {
         
         const showDiv = document.getElementById("show");
         const logout = document.getElementById("logout"); 
+        const showDiv_resp = document.getElementById("login_resp");
+        const logout_resp = document.getElementById("logout_resp");
         
         if (showDiv && logout) {
             if (localStorage.getItem("isLoggedIn") === "true") {
                 showDiv.style.display = "none"; 
+                showDiv_resp.style.display = "none"; 
                 logout.style.display = "block";
+                logout_resp.style.display = "block";
             } else {
                 showDiv.style.display = "flex"; 
                 logout.style.display = "none";
+                showDiv_resp.style.display = "flex"; 
+                logout_resp.style.display = "none";
             }
             logout.addEventListener("click", () => {
+                localStorage.setItem("isLoggedIn", "false");
+                localStorage.setItem("currentUser", "");
+                fetchdata(); 
+            });
+            logout_resp.addEventListener("click", () => {
                 localStorage.setItem("isLoggedIn", "false");
                 localStorage.setItem("currentUser", "");
                 fetchdata(); 
@@ -39,4 +50,15 @@ function fetchdata() {
         document.getElementById('footer-placeholder').innerHTML = data;
     })
     .catch(error => console.error(error));
+}
+
+function show_side(){
+    const side=  document.getElementById("side")
+   side.style.display="flex"
+   document.getElementById("menu").style.display="none"
+}
+function close_side(){
+    const side=  document.getElementById("side")
+   side.style.display="none"
+   document.getElementById("menu").style.display="block"
 }
