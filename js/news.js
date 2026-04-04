@@ -6,6 +6,8 @@ const url =`https://newsapi.org/v2/everything?q=Gold exchange&pageSize=10&apiKey
 
 
 
+
+
 /*
 
 {

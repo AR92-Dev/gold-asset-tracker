@@ -91,8 +91,10 @@ let assetsContainer = document.getElementById("assetsContainer");
         }
         else{
             vab.style.display="block";
+            let currentUser = localStorage.getItem("currentUser");
             let assets = JSON.parse(localStorage.getItem("assets")) || [];
-        for (const asset of assets){
+            let userAssets = assets.filter(asset => asset.user === currentUser);
+        for (const asset of userAssets){
             if(index>=3){
                 break;
             }
