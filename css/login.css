@@ -243,3 +243,41 @@ label{
         padding: 12px 0;
     }
 }
+
+#footer-placeholder{
+    width: 100%;
+}
+
+#header-placeholder{
+    width: 100%;
+}
+
+.login_nav{
+    display: none;
+}
+.hide_button{
+    display: none;
+}
+
+.currency{
+    display: none;
+}
+
+.sideheader{
+    width: 100%;
+    display: flex;
+    /* justify-content: space-between; */
+
+}
+
+nav{
+    width: 100%;
+}
+
+.navlink{
+    justify-self: center;
+}
+
+.logo{
+    justify-self: flex-start;
+} 
