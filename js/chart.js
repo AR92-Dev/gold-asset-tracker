@@ -7,7 +7,7 @@ const HISTORY_CACHE_LIMIT = 60 * 60 * 1000;
 let peroid = "month";
 const dayBtn = document.getElementById("day");
 const monthBtn = document.getElementById("month");
-const yearBtn = document.getElementById("year");
+// const yearBtn = document.getElementById("year");
 const ctx = document.getElementById('myChart');
 
 const myChart = new Chart(ctx, {
@@ -89,7 +89,7 @@ async function fetchHistory(timeframe) {
     }
 
     const url = `${HISTORY_API_URL}?symbol=XAU&startTimestamp=${startTimestamp}&endTimestamp=${endTimestamp}&groupBy=${groupBy}&aggregation=avg&orderBy=asc`;
-
+    
     try {
         const response = await fetch(url, {
             headers: { 'x-api-key': API_KEY }
@@ -97,7 +97,7 @@ async function fetchHistory(timeframe) {
         if (!response.ok) throw new Error("Error fetching history");
         
         const data = await response.json(); 
-        
+        console.log("the data is adassadasdasdasad:"+data)
         localStorage.setItem(`history_${timeframe}`, JSON.stringify({
             timestamp: now,
             data: data
@@ -155,7 +155,7 @@ dayBtn.addEventListener("click", () => {
     peroid = "day";
     dayBtn.className = "selected";
     monthBtn.className = "";
-    yearBtn.className = "";
+    // yearBtn.className = "";
     updateChartDisplay(); 
 });
 
@@ -163,17 +163,17 @@ monthBtn.addEventListener("click", () => {
     peroid = "month";
     monthBtn.className = "selected";
     dayBtn.className = "";
-    yearBtn.className = "";
+    // yearBtn.className = "";
     fetchHistory("month"); 
 });
 
-yearBtn.addEventListener("click", () => {
-    peroid = "year";
-    yearBtn.className = "selected";
-    dayBtn.className = "";
-    monthBtn.className = "";
-    fetchHistory("year"); 
-});
+// yearBtn.addEventListener("click", () => {
+//     peroid = "year";
+//     yearBtn.className = "selected";
+//     dayBtn.className = "";
+//     monthBtn.className = "";
+//     fetchHistory("year"); 
+// });
 
 fetchTodayLive(); 
 setInterval(fetchTodayLive, CACHE_TIME_LIMIT);
