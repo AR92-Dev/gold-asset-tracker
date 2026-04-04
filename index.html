@@ -27,6 +27,12 @@
             <div class="prices">
                 <div class="news">
                     <div class="newscard">
+                        <div class="newsslider" id="newsslider">
+                            <div class="news_1" id="newsimg1"><img src="images/newsTest1.jpg"></div>
+                        <div class="news_1" id="newsimg2"><img src="images/NewsTest_2.jpg"></div>
+                        <div class="news_1" id="newsimg3"><img src="images/heroGold.jpeg"></div>
+                        </div>
+                        
                         <span class="badge">LATEST MARKET NEWS</span>
                         <div>
                             <h1>Central Banks Accelerate Gold Reserves Amidst Global Shifts</h1>
@@ -36,9 +42,9 @@
                         </button>
       
                         <div class="pagination">
-                        <span class="line active"></span>
-                        <span class="line"></span>
-                        <span class="line"></span>
+                        <span id="line_1" class="line line_1 active"></span>
+                        <span id="line_2" class="line line_2"></span>
+                        <span id="line_3" class="line line_3"></span>
                         </div>
                         </div>
                         
@@ -123,10 +129,10 @@
                     <div class="gold-price-card">
                         <div class="upper-gold-price">
                             <img style="width: 63px;" src="/images/Fine_Gold_1Kilo.png">
-                            <p>Rashadi Coin</p>
+                            <p>1KG Bar</p>
                         </div>
                         <div class="lowe-gold-price">
-                            <h4>$78.5</h4>
+                            <h4 id="1kg_bar">Loading ...</h4>
                         </div>
                     </div>
                 </div>
@@ -138,6 +144,10 @@
                 <div id="assetsContainer" class="assetsContainer">
 
                 </div>
+                <a href="html/myAssets.html">
+                    <div class="botton_assets"><Button>View All assets</Button></div>
+                </a>
+                
             </div>
         </section>
 
