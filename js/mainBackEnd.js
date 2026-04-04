@@ -98,7 +98,6 @@ function getAllKirates() {
 async function main() {
     await fetchGold();
     getAllKirates();
-    // updateUI(currency);
 }
 //  main()
 
