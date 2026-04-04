@@ -213,6 +213,7 @@ h3:hover,h6:hover , a:hover{
     height: 300px;
     color: white;
     padding: 30px;
+    border-radius: 6px;
 }
 .gold-price-card img{
 width: 130px;
@@ -350,4 +351,16 @@ width: 130px;
 .newscard{
     overflow: hidden;
     width: 100%;
+}
+.no_assests{
+    color: #F2CA50;
+    background-color: #2A2A2A;
+    width: 50%;
+    text-align: center;
+    height: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-radius: 6px;
+
 }
