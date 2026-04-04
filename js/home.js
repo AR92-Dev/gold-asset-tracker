@@ -84,7 +84,11 @@ let assetsContainer = document.getElementById("assetsContainer");
     assetsContainer.innerHTML = "";
 
     let index=0;
-    let assets = JSON.parse(localStorage.getItem("assets")) || [];
+     if(localStorage.getItem("isLoggedIn") !== "true"){
+            assetsContainer.innerHTML = `<div>Please Login to view or add assets</div>`;
+        }
+        else{
+            let assets = JSON.parse(localStorage.getItem("assets")) || [];
         for (const asset of assets){
             if(index>=3){
                 break;
@@ -137,6 +141,8 @@ let assetsContainer = document.getElementById("assetsContainer");
         assetsContainer.appendChild(card);
         index++;
     };
+        }
+    
 }
 
 

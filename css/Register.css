@@ -9,19 +9,19 @@
 body {
     background-color: #131313;
     display: flex;
-    justify-content: center;
-    align-items: center;
     flex-direction: column;   
     background: linear-gradient(135deg, #0f1f1c, #131313, #1a1a1a);
-
-    justify-content: center;
-    align-items: center;
+    min-height: 100vh;
 }
 
 .container{
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
+    flex: 1;
+    width: 100%;
+    padding: 20px;
 }
 
 .title{
@@ -47,14 +47,37 @@ hr{
     margin: 20px 0;
 }
 
-.brand-title{
+.brand-title {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
     margin-bottom: 20px;
-    margin-top: 0px;
-    padding: 10px;
+    padding: 30px 10px 10px;
+    width: 100%;
+}
+
+#login-header {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 30px 20px 10px;
+    position: relative;
+}
+
+#login-header .logo {
+    position: absolute;
+    left: 40px;
+    top: 50%;
+    transform: translateY(-50%);
+    margin: 0;
+}
+
+#login-header .navlink {
+    display: block !important;
+    text-align: center;
 }
 
 
@@ -138,7 +161,6 @@ label{
 
 .footer{
     width: 100%;
-    margin-top: 40px;
     padding: 20px 0;
     background-color: #0d0d0d;
 }
@@ -167,6 +189,16 @@ label{
 
 
 @media screen and (max-width: 768px) {
+    #login-header {
+        flex-direction: column;
+        padding-top: 20px;
+    }
+    #login-header .logo {
+        position: static;
+        transform: none;
+        margin-bottom: 10px;
+    }
+
     .body-card {
         width: 85%;
         padding: 40px 20px;

@@ -171,7 +171,7 @@ input:focus{
     text-align: center;
 }
 @media (max-width:900px) {
-    .navlink, .login{
+    .navlink, .login,.logout_div{
         display: none;
     }
     .header i{
