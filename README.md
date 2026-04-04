@@ -5,6 +5,10 @@
 - **Dana Alkhabbas**
 - **Ahmad Al Tamimi**
 
+## 🔗 Project Links
+- [Figma Design](https://www.figma.com/design/qnKpwVtPk96BMIf26I1ur4/GoldProject?node-id=0-1&p=f&t=gxCdfMlsDKIBRqJ2-0)
+- [Notion Workspace](https://zenith-lemon-e91.notion.site/Gold-Project-336d598cb0718059a0cbc39b1c3acc77)
+
 ## 💡 Project Idea & Overview
 This project is a comprehensive web application simulating a real-world gold tracking platform. Designed and built using HTML, CSS, and Vanilla JavaScript, the application allows users to view live gold market prices, read the latest financial news, and manage a personal digital vault of their gold assets. 
 
