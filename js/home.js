@@ -1,3 +1,7 @@
+const firstline = document.getElementById("line_1")
+const secondline = document.getElementById("line_2")
+const thirdline = document.getElementById("line_3")
+const slider = document.getElementById("newsslider")
 let dates = [];
 let currency = "dollar";
 if (localStorage.getItem("dates") === null) {
@@ -145,6 +149,7 @@ function updateUI(currency) {
         document.getElementById("price-18k").innerText = "$" + dollar_18k_1gram;
         document.getElementById("rashadi").innerHTML = "$" + dollar_21k_rashadiCoin;
         document.getElementById("english_coin").innerHTML = "$" + dollar_21k_englishCoin;
+        document.getElementById("1kg_bar").innerHTML="$" + dollar_1kg_bar;
     } else if (currency === "jod") {
         document.getElementById("price-ounce").innerText = jod_24k_ounce + " JOD";
         document.getElementById("price-24k").innerText = jod_24k_1gram + " JOD";
@@ -152,6 +157,7 @@ function updateUI(currency) {
         document.getElementById("price-18k").innerText = jod_18k_1gram + " JOD";
         document.getElementById("rashadi").innerHTML = jod_21k_rashadiCoin + " JOD";
         document.getElementById("english_coin").innerHTML = jod_21k_englishCoin + " JOD";
+        document.getElementById("1kg_bar").innerHTML = jod_1kg_bar + " JOD";
     }
 }
 
@@ -179,3 +185,14 @@ async function startApp() {
 }
 
 startApp();
+firstline.addEventListener("click", ()=>{
+    slider.style.transform = "translateX(0%)";
+});
+
+secondline.addEventListener("click", ()=>{
+    slider.style.transform = "translateX(-100%)";
+});
+
+thirdline.addEventListener("click", ()=>{
+    slider.style.transform = "translateX(-200%)";
+});
