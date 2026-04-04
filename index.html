@@ -26,31 +26,26 @@
         <div class="content">
             <div class="prices">
                 <div class="news">
-                    <div class="newscard">
-                        <div class="newsslider" id="newsslider">
-                            <div class="news_1" id="newsimg1"><img src="images/newsTest1.jpg"></div>
-                        <div class="news_1" id="newsimg2"><img src="images/NewsTest_2.jpg"></div>
-                        <div class="news_1" id="newsimg3"><img src="images/heroGold.jpeg"></div>
-                        </div>
-                        
-                        <span class="badge">LATEST MARKET NEWS</span>
-                        <div>
-                            <h1>Central Banks Accelerate Gold Reserves Amidst Global Shifts</h1>
-                        <div class="bottom-row">
-                        <button class="read-more">
+            <div class="newscard">
+            <div class="newsslider" id="newsslider">
+            </div>
+        
+        <span class="badge">LATEST MARKET NEWS</span>
+        <div>
+            <h1 id="news-title">Loading...</h1>
+            <div class="bottom-row">
+                <a id="news-link" href="#" target="_blank" style="text-decoration: none;">
+                    <button class="read-more">
                         Read Article <span>&rarr;</span>
-                        </button>
-      
-                        <div class="pagination">
-                        <span id="line_1" class="line line_1 active"></span>
-                        <span id="line_2" class="line line_2"></span>
-                        <span id="line_3" class="line line_3"></span>
-                        </div>
-                        </div>
-                        
+                    </button>
+                </a>
+                
+                <div class="pagination" id="news-pagination">
                     </div>
-                    </div>
-                </div>
+            </div>
+        </div>
+    </div>
+</div>
                 <div class="sideprices">
     <div class="liveprice">
         <div class="livepricefirst">
@@ -92,9 +87,9 @@
             <div class="charupper">
                 <p>Gold Price Chart</p>
                 <div class="intervalchart">
-                    <button id="day">1D</button>
-                    <button id="month" class="selected">1M</button>
-                    <button id="year">1Y</button>
+                    <button id="day"  class="selected">1D</button>
+                    <button id="month">1M</button>
+                    
                 </div>
             </div>
             <div class="chardraw">
@@ -145,7 +140,7 @@
 
                 </div>
                 <a href="html/myAssets.html">
-                    <div class="botton_assets"><Button>View All assets</Button></div>
+                    <div id="botton_assets" class="botton_assets"><Button>View All assets</Button></div>
                 </a>
                 
             </div>
@@ -158,5 +153,6 @@
 <script src="/js/chart.js"></script>
 <script src="js/mainBackEnd.js"></script>
 <script src="js/home.js"></script>
+<script src="/js/homenews.js"></script>
 </body>
 </html>
