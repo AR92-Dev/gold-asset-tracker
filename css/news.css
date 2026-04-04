@@ -1,4 +1,10 @@
-
+body{
+    display: flex;
+    flex-direction: column;
+}
+footer{
+    justify-self: end;
+}
 .newsHeader {
     display: flex;
     justify-content: space-between;
@@ -179,10 +185,69 @@ h3:hover {
     width: 100%;
 }
 
+
+
 @media (max-width: 768px) {
-    .newsHeader { padding: 20px 16px 10px; flex-direction: column; align-items: flex-start; }
-    .carrd-container { padding: 10px 16px 40px; }
-    .header { flex-direction: column; gap: 16px; }
-    .gold-divider { margin: 0 16px 20px; }
+    .newsHeader { 
+        padding: 20px 16px 10px; 
+        flex-direction: column; 
+        align-items: flex-start; 
+        gap: 15px;
+    }
+    
+    .SecandreyBar {
+        width: 100%;
+        justify-content: flex-start;
+        overflow-x: auto;
+        padding-bottom: 5px;
+    }
+
+    .carrd-container { 
+        padding: 10px 16px 40px; 
+        gap: 16px;
+    }
+    
+    .card {
+        width: 100%; 
+        max-width: 400px;
+    }
+
+    .header { 
+        flex-direction: column; 
+        gap: 16px; 
+    }
+    
+    .gold-divider { 
+        margin: 0 16px 20px; 
+    }
 }
+
+@media (max-width: 480px) {
+    .newsHeader h3 {
+        font-size: 1.5rem;
+    }
+    
+    .login {
+        flex-direction: column;
+        width: 100%;
+    }
+    
+    .login button {
+        width: 100%;
+        margin-bottom: 5px;
+    }
+    
+    .navlink nav {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+    
+    .navlink nav a {
+        display: block;
+        margin: 5px 0;
+    }
+}
+
 
