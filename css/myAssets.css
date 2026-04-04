@@ -152,6 +152,10 @@ h6 {
     /* gap: 2vw; */
 
 }
+#delete_btn{
+    justify-self: center;
+    align-self: center;
+}
 
 .first_card {
     grid-template-columns: 3;

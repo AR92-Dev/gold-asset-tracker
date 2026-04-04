@@ -20,7 +20,7 @@ let input4_typeJewlery = document.getElementById("input4_typeJewlery");//Select 
 let input5_typeCoins = document.getElementById("input5_typeCoins");//Select coins types
 let input6_typeBars = document.getElementById("input6_typeBars");//Select gold Bars typess
 
-
+let closeAssetBtn=document.getElementById("closeAssetBtn");
 
 let input1_Small = document.getElementById("input1_Small");
 let input2_Small = document.getElementById("input2_Small");
@@ -228,6 +228,12 @@ addAssetForm.addEventListener("submit", (e) => {
         localStorage.setItem("assets", JSON.stringify(assets));
 
         addAssetsCards();
+        let modalElement = document.getElementById("addAssetModal");
+        let modal = bootstrap.Modal.getInstance(modalElement);
+        modal.hide();
+
+        
+        addAssetForm.reset();
     }
 })
 
@@ -256,7 +262,7 @@ function getDefaultImage() {
     // Coins
     if (input3_assetType.value === "Coins") {
         if (input5_typeCoins.value === "eCoin") return "/images/English.png";
-        if (input5_typeCoins.value === "rCoin") return "images/Rashadi_Gold.png";
+        if (input5_typeCoins.value === "rCoin") return "/images/Rashadi_Gold.png";
         return "/images/heroGold.jpeg";
     }
 
@@ -270,3 +276,7 @@ function getDefaultImage() {
 
     return "/images/heroGold.jpeg";
 }
+
+closeAssetBtn.addEventListener("click",()=>{
+    addAssetForm.reset();
+})
