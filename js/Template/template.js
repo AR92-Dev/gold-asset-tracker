@@ -1,4 +1,4 @@
-fetch('/gold-asset-tracker/html/Template/header.html')
+fetch('/html/Template/header.html') //path
     .then(response => {
         if (!response.ok) throw new Error("Header not found!");
         return response.text();
@@ -16,7 +16,7 @@ fetch('/gold-asset-tracker/html/Template/header.html')
     })
     .catch(error => console.error(error));
 
-fetch('/gold-asset-tracker/html/Template/footer.html')
+fetch('/html/Template/footer.html')
     .then(response => {
         if (!response.ok) throw new Error("Footer not found!");
         return response.text();

@@ -204,19 +204,24 @@ addAssetForm.addEventListener("submit", (e) => {
     } else {
         clearError(input9_purchaseDate);
     }
+    //img -> Base64 -> local storage
+    //localStorage يخزن نص فقط
+    //Base64 = نص يمثل الصورة
      if (!saveToform) return;
     if (input10_assetImage.files.length > 0) {
         let file = input10_assetImage.files[0]; //  first image
-        let reader = new FileReader(); //  obj  to read files
+        let reader = new FileReader(); //  obj  to read files 
 
-        reader.onload = function(e) { //  func  to read image
-            imagePath = e.target.result; //  image as base64
-            saveAsset(); //  save asset
+        reader.onload = function(e) { //  func  to read image بعد ما يخلص قراء ملف 
+            //onload :  event بشتغل بعد ما يخلص  FileReader و قراءة الملف 
+            imagePath = e.target.result; //  image as base64     data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAA...
+            saveAsset(); //  save asset 
         };
 
-        reader.readAsDataURL(file); //  func to convert image to base64
+        reader.readAsDataURL(file); //  func to convert image to base64 start read -> onload -> saveAsset
 
-    } else {
+    } //اذا فش صوره نستخدم default image
+    else {
         imagePath = getDefaultImage(); 
         saveAsset();
     } 
@@ -262,29 +267,31 @@ function clearError(input) {
     small.textContent = "";
 }
 
+
+Dana
 function getDefaultImage() {
 
     // Jewelry
     if (input3_assetType.value === "Jewelry") {
-        if (input4_typeJewlery.value === "ring") return "/gold-asset-tracker/images/Rings.png";
-        if (input4_typeJewlery.value === "bracelet") return "/gold-asset-tracker/images/Bracelet.png";
-        if (input4_typeJewlery.value === "necklace") return "/gold-asset-tracker/images/Necklace.png";
-        if (input4_typeJewlery.value === "earrings") return "/gold-asset-tracker/images/Earring.png";
+        if (input4_typeJewlery.value === "ring") return "/images/Rings.png";
+        if (input4_typeJewlery.value === "bracelet") return "/images/Bracelet.png";
+        if (input4_typeJewlery.value === "necklace") return "/images/Necklace.png";
+        if (input4_typeJewlery.value === "earrings") return "/images/Earring.png";
         return "images/heroGold.jpeg";
     }
 
     // Coins
     if (input3_assetType.value === "Coins") {
-        if (input5_typeCoins.value === "eCoin") return "/gold-asset-tracker/images/English.png";
-        if (input5_typeCoins.value === "rCoin") return "/gold-asset-tracker/images/Rashadi_Gold.png";
+        if (input5_typeCoins.value === "eCoin") return "/images/English.png";
+        if (input5_typeCoins.value === "rCoin") return "/images/Rashadi_Gold.png";
         return "images/heroGold.jpeg";
     }
 
     // Bars
     if (input3_assetType.value === "Gold_bars") {
-        if (input6_typeBars.value === "one_bullion") return "/gold-asset-tracker/images/Fine_Gold_1Kilo.png";
-        if (input6_typeBars.value === "one_ounce") return "/gold-asset-tracker/images/Fine_Gold_10Kilo.png";
-        if (input6_typeBars.value === "half_ounce") return "/gold-asset-tracker/images/F Fine_Gold_5Kilo.png";
+        if (input6_typeBars.value === "one_bullion") return "/images/Fine_Gold_1Kilo.png";
+        if (input6_typeBars.value === "one_ounce") return "/images/Fine_Gold_10Kilo.png";
+        if (input6_typeBars.value === "half_ounce") return "/images/F Fine_Gold_5Kilo.png";
         return "images/heroGold.jpeg";
     }
 
@@ -304,7 +311,7 @@ function getDefaultImage() {
             image: imagePath
         };
 
-        let assets = JSON.parse(localStorage.getItem("assets")) || []; // json -> obj
+        let assets = JSON.parse(localStorage.getItem("assets")) || []; // json -> obj نقرأ من localStorage
         assets.push(asset);
         localStorage.setItem("assets", JSON.stringify(assets)); // obj -> strign
 
