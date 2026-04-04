@@ -1,6 +1,8 @@
-const url = `https://gnews.io/api/v4/search?q=XAU&max=15&apikey=f0a144935ebb94dc20c855a65517bef0`;
-const key="news_data";
-const time_key = "news_time";
+// const url = `https://gnews.io/api/v4/search?q=Gold exchange&max=10&apikey=f0a144935ebb94dc20c855a65517bef0`;
+const url =`https://newsapi.org/v2/everything?q=Gold exchange&pageSize=10&apiKey=473c2c01c5f84cf892fb798eb9bb9196`
+
+//06beacb08d15145918a4212e842e9e21
+//0a9cb7bbcc216ed62478bef2edfed12d
 
 
 
@@ -134,7 +136,8 @@ function displayNewsCards(articles) {
         const card = document.createElement('div');
         card.className = 'card';
         //|| = قيمة بديلة
-        const imageUrl = article.image || fallbackImg;
+        const imageUrl = article.urlToImage || article.image || fallbackImg;
+        //        const imageUrl = article.image || fallbackImg;
         const date = new Date(article.publishedAt).toLocaleDateString('en-US', {
             year: 'numeric', month: 'short', day: 'numeric'
         });

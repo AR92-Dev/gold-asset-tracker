@@ -204,6 +204,29 @@ addAssetForm.addEventListener("submit", (e) => {
     } else {
         clearError(input9_purchaseDate);
     }
+    //img -> Base64 -> local storage
+    //localStorage يخزن نص فقط
+    //Base64 = نص يمثل الصورة
+    /* if (!saveToform) return;
+    if (input10_assetImage.files.length > 0) {
+        let file = input10_assetImage.files[0]; //  first image
+        let reader = new FileReader(); //  obj  to read files 
+
+        reader.onload = function(e) { //  func  to read image بعد ما يخلص قراء ملف 
+            //onload :  event بشتغل بعد ما يخلص  FileReader و قراءة الملف 
+            imagePath = e.target.result; //  image as base64     data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAA...
+            saveAsset(); //  save asset 
+        };
+
+        reader.readAsDataURL(file); //  func to convert image to base64 start read -> onload -> saveAsset
+
+    } //اذا فش صوره نستخدم default image
+    else {
+        imagePath = getDefaultImage(); 
+        saveAsset();
+    } 
+
+    */
     if (input10_assetImage.files.length > 0) {
         imagePath = URL.createObjectURL(input10_assetImage.files[0]);
 
@@ -235,6 +258,7 @@ addAssetForm.addEventListener("submit", (e) => {
         
         addAssetForm.reset();
     }
+   
 })
 
 function showError(input, message) {
@@ -248,6 +272,8 @@ function clearError(input) {
     small.textContent = "";
 }
 
+
+Dana
 function getDefaultImage() {
 
     // Jewelry

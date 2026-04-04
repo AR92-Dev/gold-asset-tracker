@@ -1,15 +1,22 @@
-
-fetch('../html/Template/header.html')
+fetch('/html/Template/header.html') //path
     .then(response => {
         if (!response.ok) throw new Error("Header not found!");
         return response.text();
     })
     .then(data => {
         document.getElementById('header-placeholder').innerHTML = data;
+        const showDiv = document.getElementById("show");
+        if (showDiv) {
+            if (localStorage.getItem("isLoggedIn") === "true") {
+                showDiv.style.display = "none"; 
+            } else {
+                showDiv.style.display = "flex"; 
+            }
+        }
     })
     .catch(error => console.error(error));
 
-fetch('../html/Template/footer.html')
+fetch('/html/Template/footer.html')
     .then(response => {
         if (!response.ok) throw new Error("Footer not found!");
         return response.text();
@@ -18,23 +25,12 @@ fetch('../html/Template/footer.html')
         document.getElementById('footer-placeholder').innerHTML = data;
     })
     .catch(error => console.error(error));
-    const login = document.getElementById("login")
-    if(sessionStorage.getItem("isLoggedIn") !== "true"){
-            login.style.visibility=false
-        }
-        else{
-            login.style.visibility=false
 
-        }
-function show_side(){
-    const side=  document.getElementById("side")
-   side.style.display="flex"
-   document.getElementById("menu").style.display="none"
-}
-function close_side(){
-    const side=  document.getElementById("side")
-   side.style.display="none"
-   document.getElementById("menu").style.display="block"
-}
+    // const login = document.getElementById("login")
+    // if(sessionStorage.getItem("isLoggedIn") !== "true"){
+    //         login.style.visibility=false
+    //     }
+    //     else{
+    //         login.style.visibility=false
 
-  
+    //     }
