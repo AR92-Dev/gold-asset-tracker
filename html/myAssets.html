@@ -19,9 +19,6 @@
     <link rel="stylesheet" href="/css/asset.css">
     <link rel="stylesheet" href="/css/myAssets.css">
 
-  <link rel="stylesheet" href="/gold-asset-tracker/css/asset.css">
-  <link rel="stylesheet" href="/gold-asset-tracker/css/myAssets.css">
-
 
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -85,20 +82,20 @@
       <div class="filter_group">
         <label for="typeSelect">Asset Type:</label>
         <select id="typeSelect" class="type_filter">
-          <option selected>All</option>
-          <option>Jewelry</option>
-          <option>Coins</option>
-          <option>Gold Bars</option>
+          <option selected value="All">All</option>
+          <option value="Jewelry">Jewelry</option>
+          <option value="Coins">Coins</option>
+          <option value="Gold_bars">Gold Bars</option>
         </select>
       </div>
 
       <div class="filter_group">
         <label for="kiratSelect">Kirat:</label>
         <select id="kiratSelect" class="kirat_filter">
-          <option selected>All</option>
-          <option>24k</option>
-          <option>21k</option>
-          <option>18k</option>
+          <option selected value="All">All</option>
+          <option value="24k">24k</option>
+          <option value="21k">21k</option>
+          <option value="18k">18k</option>
         </select>
       </div>
 
@@ -264,7 +261,7 @@
           </form>
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" id="closeAssetBtn">Cancel</button>
           <button type="submit" form="addAssetForm" class="btn btn-warning"  id="saveAssetBtn">Save Asset</button>
         </div>
       </div>

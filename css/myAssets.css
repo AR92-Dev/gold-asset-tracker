@@ -2,7 +2,7 @@
     padding: 2vw;
     display: flex;
     flex-direction: column;
-    gap: 3vw;
+    gap: 1vw;
 }
 
 .assets_1 {
@@ -145,44 +145,51 @@ h6 {
 .assets_4 {
     margin-left: 2rem;
     margin-top: 0;
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+   grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
     justify-content: center;
-    gap: 2vw;
+    /* gap: 2vw; */
 
+}
+#delete_btn{
+    justify-self: center;
+    align-self: center;
 }
 
 .first_card {
-    flex: 0 0 calc(33.33% - 1.3vw);
+    grid-template-columns: 3;
     box-shadow: 0 0 10px #D4AF37;
      display: flex;
     flex-direction: column;
-    margin-top: 2vw;
+    
     
     min-width: 100px;
     max-width: 350px;
-    height: auto;
-    padding: 1.5rem;
+   
+     padding: 1rem;
     background-color: #1C1B1B;
     color: #E5E2E1;
+    height: fit-content;
+    border-radius: 12px;
 }
 
 .first_card img{
-    width:100% ;
-    height: 30%;
+    width: 100%;
+    height: 100px;
+   object-fit: contain;
 }
 
 .card_first_line {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-top: 2vw;
-    margin-right: 2vw;
-    margin-bottom: 2vw;
+    margin-top: 0.5rem ;
+    margin-bottom: 2rem;
 }
 
 .tit_subTit div{
-    font-size: 2rem;
+    font-size: 1.2rem;
 }
 .tit_subTit sub{
     font-size: 1rem;
@@ -249,6 +256,18 @@ hr {
     background-color: #575755;
     color: #E5E2E1;
     /* box-shadow: 0 0 2px #D4AF37; */
+}
+
+@media (max-width: 900px) {
+    .assets_4 {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 500px) {
+    .assets_4 {
+        grid-template-columns: 1fr;
+    }
 }
 
 
