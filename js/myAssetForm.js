@@ -235,6 +235,7 @@ addAssetForm.addEventListener("submit", (e) => {
         
         addAssetForm.reset();
     }
+   
 })
 
 function showError(input, message) {
@@ -247,7 +248,6 @@ function clearError(input) {
     let small = input.parentElement.querySelector("small");
     small.textContent = "";
 }
-
 function getDefaultImage() {
 
     // Jewelry

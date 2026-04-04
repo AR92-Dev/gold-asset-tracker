@@ -164,3 +164,50 @@ label{
 .links a:hover{
     color: #F2CA50;
 }
+
+
+@media screen and (max-width: 768px) {
+    .body-card {
+        width: 85%;
+        padding: 40px 20px;
+    }
+
+    .brand-title h1 {
+        font-size: 28px;
+        letter-spacing: 5px;
+    }
+
+    .footer-content {
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+    }
+
+    .links {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .body-card {
+        width: 95%;
+        padding: 30px 15px;
+        border-radius: 15px;
+    }
+
+    .brand-title h1 {
+        font-size: 24px;
+        letter-spacing: 3px;
+    }
+
+    input {
+        padding: 12px 15px;
+    }
+
+    button {
+        padding: 12px 0;
+    }
+}

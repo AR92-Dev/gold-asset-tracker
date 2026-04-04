@@ -157,14 +157,8 @@ function deleteAsset(index) {
 
     if (!confirm("Are you sure you want to delete this asset?")) return;
     let assets = JSON.parse(localStorage.getItem("assets")) || [];
-
-    
     assets.splice(index, 1);
-
-  
     localStorage.setItem("assets", JSON.stringify(assets));
-
-   
     addAssetsCards();
     updateAsset2();
 }
