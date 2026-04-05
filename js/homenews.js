@@ -39,7 +39,7 @@ function displayNewsSlider(articles) {
         imgDiv.className = 'news_1'; 
         imgDiv.id = `newsimg${index}`;
         imgDiv.style.display = index === 0 ? 'block' : 'none'; 
-        imgDiv.innerHTML = `<img src="${imageUrl}" alt="${article.title}" onerror="this.src='${fallbackImg}'" style="width: 100%; height: 100%; object-fit: cover;">`;
+        imgDiv.innerHTML = `<img src="${imageUrl}" alt="${article.title}" onerror="this.src='${fallbackImg}'">`;
         sliderContainer.appendChild(imgDiv);
 
         const line = document.createElement('span');
