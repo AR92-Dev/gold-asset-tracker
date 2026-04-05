@@ -250,6 +250,10 @@ width: 130px;
 .news{
     width: 70%;
 }
+<<<<<<< HEAD
+=======
+
+>>>>>>> ce82d8e89ded309cf296a6051d0a85bfc48ed816
 @media (max-width:900px) {
     .prices{
         display: flex;
