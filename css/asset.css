@@ -80,18 +80,35 @@ input:focus{
 
 
 /* this section for header */
-
+#header-placeholder {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background-color: var(--Neutral-color); 
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    background-color: var(--Neutral-color);
+    transition: background-color 0.4s ease, backdrop-filter 0.4s ease;
+}
+#header-placeholder.scrolled {
+    background-color: rgba(18, 18, 18, 0.6);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.5);
+}
 
 .header{
     display: flex;
     justify-content: space-around;
     align-items: center;
+    padding-top: 20px;
+    padding-bottom: 20px;
 }
 .logo p{
    color: var(--primary-color);
    font-size: 40px;
    font-weight: bolder;
    letter-spacing: 5px;
+   margin: 0; 
+    line-height: 0.8;
 }
 .navlink a{
     color: #D0C5AF;
@@ -129,7 +146,7 @@ input:focus{
     color: white;
     text-align: center;
 }
-.header i{
+#menu {
     display: none;
 }
 
@@ -172,9 +189,9 @@ input:focus{
 }
 @media (max-width:900px) {
     .navlink, .login,.logout_div{
-        display: none;
+        display:none;
     }
-    .header i{
+    #menu{
         display: block;
     }
 }
@@ -227,5 +244,8 @@ h3:hover,h6:hover , a:hover{
     color: var(--primary-color);
     cursor: pointer;
 }
-
+.logo {
+    display: flex;
+    align-items: center;
+}
 

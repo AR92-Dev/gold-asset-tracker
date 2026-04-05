@@ -38,7 +38,9 @@ function displayNewsSlider(articles) {
         const imgDiv = document.createElement('div');
         imgDiv.className = 'news_1'; 
         imgDiv.id = `newsimg${index}`;
-        imgDiv.style.display = index === 0 ? 'block' : 'none'; 
+        if (index === 0) {
+    imgDiv.classList.add('active-slide');
+}
         imgDiv.innerHTML = `<img src="${imageUrl}" alt="${article.title}" onerror="this.src='${fallbackImg}'">`;
         sliderContainer.appendChild(imgDiv);
 
@@ -64,12 +66,10 @@ function updateSlideContent(index) {
 }
 
 function goToSlide(index) {
-    document.getElementById(`newsimg${currentSlideIndex}`).style.display = 'none';
+    document.getElementById(`newsimg${currentSlideIndex}`).classList.remove('active-slide');
     document.getElementById(`line_${currentSlideIndex}`).classList.remove('active');
-
     currentSlideIndex = index;
-
-    document.getElementById(`newsimg${currentSlideIndex}`).style.display = 'block';
+    document.getElementById(`newsimg${currentSlideIndex}`).classList.add('active-slide');
     document.getElementById(`line_${currentSlideIndex}`).classList.add('active');
 
     updateSlideContent(currentSlideIndex);
