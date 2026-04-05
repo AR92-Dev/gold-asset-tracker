@@ -247,7 +247,9 @@ width: 130px;
 .goldpricesection h2 ,.my-assets-section h2{
     color: var(--primary-color);
 }
-
+.news{
+    width: 70%;
+}
 @media (max-width:900px) {
     .prices{
         display: flex;
@@ -302,6 +304,9 @@ width: 130px;
     align-items: center;    
     
     
+}
+.news{
+    width: 100%;
 }
 }
 
