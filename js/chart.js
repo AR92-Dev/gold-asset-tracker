@@ -21,7 +21,7 @@ const myChart = new Chart(ctx, {
       borderColor: "#D4AF37",
       data: [],
       pointRadius: 0,
-      pointHoverRadius: 0,
+      
     }]
   },
   options: {
