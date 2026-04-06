@@ -1,7 +1,7 @@
 fetchdata();
 
 function fetchdata() {
-    fetch('html/Template/header.html')
+    fetch('/html/Template/header.html')
     .then(response => {
         if (!response.ok) throw new Error("Header not found!");
         return response.text();
@@ -50,7 +50,7 @@ function fetchdata() {
     .catch(error => console.error("Header Error:", error));
 
     // 2. Fetch Footer
-    fetch('html/Template/footer.html')
+    fetch('/html/Template/footer.html')
     .then(response => {
         if (!response.ok) throw new Error("Footer not found!");
         return response.text();
