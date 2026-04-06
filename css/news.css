@@ -2,6 +2,12 @@ body{
     display: flex;
     flex-direction: column;
 }
+.section-container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;   /* center everything */
+    padding: 0 20px;  /* same left/right spacing */
+}
 footer{
     justify-self: end;
 }
@@ -11,7 +17,9 @@ footer{
     align-items: center;
     flex-direction: row;
     gap: 20px;
-    padding: 30px 40px 10px;
+    /* padding: 30px 40px 10px; */
+    padding-top: 30px;
+   
 }
 
 h3 { color: whitesmoke; }
@@ -44,12 +52,15 @@ h3:hover {
 }
 
 .carrd-container {
+    width: 100%;
+    /* background-color: aqua; */
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: space-between;
     gap: 24px;
-    padding: 10px 40px 60px;
+    padding-bottom: 30px;
+    /* padding: 10px 40px 60px; */
 }
 
 .card {
